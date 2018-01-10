@@ -1,0 +1,80 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    font-size: 12px;
+}
+
+h1 {
+    color: #525454;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+/*
+hr {
+    background: #D0D7D9;
+    height: 1px;
+    margin: 20px 0 20px 0;
+    border: none;
+}
+*/
+
+#map {
+    bottom:0px;
+    height: 100%;
+    left: 362px;
+    position: absolute;
+    right: 0px;
+}
+
+#pano {
+    width: 200px;
+    height: 200px;
+}
+/*
+#toggle-drawing {
+    width: 27%;
+    position: relative;
+    margin-left: 10px;
+}
+  
+#zoom-to-area-text {
+    position: relative;
+    width: 70%;
+}
+
+#zoom-to-area {
+    width: 24%;
+}
+*/
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px;
+}
+
+.options-box {
+    border-radius: 3px;
+    line-height: 35px;
+    text-align: left;
+    width: 340px;
+    padding-top: 56px;
+    height: 100%;
+}
+
+.text {
+    font-size: 12px;
+  }
