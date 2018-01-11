@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="en">
+<!DOCYPTE html>
+<html>
     <head>
         <title>Neighborhood Maps</title>
         
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -22,7 +22,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between fixed-top">
                 
-                    <a class="navbar-brand">Discover You Neighborhood</a>
+                    <a class="navbar-brand">Discover Venues in your Neighborhood</a>
                     <form class="form-inline" id="form-search">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit-button">Search</button>
@@ -31,11 +31,11 @@
                 </nav>
                 
                 <div class="options-box bg-light">
-                    <p id="total-result" data-bind="text: totalResult">
+                    <p id="total-result" data-bind="text: queryResult">
                     
-                    <ul class="list-group" id="area-list" data-bind="foreach: {data: area-filtered, as: 'areaFiltered'}" >
-                        <li class="list-group-item" data-bind="click: $root.selectArea">
-                            <span data-bind="text: areaFiltered.name"></span>
+                    <ul class="list-group" id="area-list" data-bind="forEach: {data: FilteredList, as: 'areaFiltered'}" >
+                        <li class="list-group-item" data-bind="click: $root.selectVenue">
+                        <!--    <span data-bind="text: areaFiltered.name"></span> -->
                         </li>
                     </ul>
                     
@@ -43,18 +43,19 @@
             </div>
             
             <!-- map -->
-            <div id="map"></map> 
+            <div id="map"></map></div>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
-        <!--<script type="text/javascript" src="scripts/app.js"></script> -->
+        <script src="scripts/knockout-3.4.2.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
 
         <script async defer
-            src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyDW7LJGWA8k5-lNth67Z53H2_O2mH4ZhBA&v=3&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyDW7LJGWA8k5-lNth67Z53H2_O2mH4ZhBA&v=3&callback=initMap">
         </script>
 
     </body>
