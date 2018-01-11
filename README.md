@@ -8,3 +8,4 @@ In this Project, Several great libraries and APIs are used:
 2. Google Maps API
 3. FourSquare API
 4. JQuery
+5. Bootstrap v4.0
