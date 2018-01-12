@@ -28,45 +28,12 @@ hr {
 #map {
     bottom:0px;
     height: 100%;
-    left: 362px;
-    position: absolute;
+    /*left: 250px;
+    position: absolute;*/
     right: 0px;
 }
-/*
-#pano {
-    width: 200px;
-    height: 200px;
-}
 
-#toggle-drawing {
-    width: 27%;
-    position: relative;
-    margin-left: 10px;
-}
-  
-#zoom-to-area-text {
-    position: relative;
-    width: 70%;
-}
-
-#zoom-to-area {
-    width: 24%;
-}
-*/
-.wrapper {
-    display: flex;
-    align-items: stretch;
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-}
-
-.container {
-    margin: 0px;
-    padding: 0px;
-}
-
-.options-box {
+.side_bar {
     border-radius: 3px;
     line-height: 35px;
     text-align: left;
@@ -77,4 +44,8 @@ hr {
 
 .text {
     font-size: 12px;
+}
+
+.col-4 {
+    max-width: 100%;
 }
