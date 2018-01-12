@@ -40,7 +40,8 @@ function ViewModel(){
     
     this.markers = [];
     this.query = ko.observable("");
-    
+    defaultIcon = makeMarkerIcon('0091ff');
+    highlightedIcon = makeMarkerIcon('FFFF24');
     // function called when the marker is clicked
     this.showInfoWindow = function(marker, info_window) {
         if (info_window.marker != marker) {
@@ -91,6 +92,7 @@ function ViewModel(){
         
         self.showInfoWindow(this, self.infoWindow);
         this.setAnimation(google.maps.Animation.BOUNCE);
+        this.setIcon(highlightedIcon);
         setTimeout((function() {
             this.setAnimation(null);
         }).bind(this), 2100);
@@ -118,12 +120,14 @@ function ViewModel(){
                 lng: this.lng,
                 title: initial_area[i].name,
                 id: i,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                icon: defaultIcon,
             });
             
             this.marker.setMap(map);
             this.markers.push(this.marker);
             this.marker.addListener('click', self.show_bounce_marker);
+         
         }
     };
     
@@ -143,3 +147,15 @@ function ViewModel(){
         return result;
     }, this);
 }
+
+// Set default and highlighted icon
+function makeMarkerIcon(markerColor) {
+    var markerImage = new google.maps.MarkerImage(
+        'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+        '|40|_|%E2%80%A2',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0, 0),
+        new google.maps.Point(10, 34),
+        new google.maps.Size(21,34));
+    return markerImage;
+} 
