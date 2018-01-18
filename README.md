@@ -1,4 +1,4 @@
-# yiyupan.github.io
+# Neighborhood Map Application
 
 Please check out the project here : https://yiyupan.github.io/index.html
 
